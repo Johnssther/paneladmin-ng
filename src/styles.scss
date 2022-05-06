@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.cover, .content{
+  background-image: url('https://cdn.pixabay.com/photo/2022/01/07/07/13/chicago-6921293_960_720.jpg');
+  background-size: cover;
+}
+.content-wrapper {
+  height: 100vh;
+}

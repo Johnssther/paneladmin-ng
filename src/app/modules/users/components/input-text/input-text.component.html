@@ -1,0 +1,21 @@
+<div class="row form-group col-sm-6">
+  <label class="col-form-label col-lg-2 font-weight-semibold"
+    [ngClass]="{ 'text-danger': submitted && this.form?.get('name')?.errors}"
+    [ngClass]="{ 'text-success': submitted && !this.form?.get('name')?.errors}"
+    >
+    Nombre:
+  </label>
+  <div class="form-group-feedback form-group-feedback-right">
+    <ng-content></ng-content>
+    <div class="form-control-feedback text-danger" *ngIf="submitted && this.form?.get('name')?.errors">
+      <i class="icon-cancel-circle2"></i>
+    </div>
+    <div class="form-control-feedback text-success" *ngIf="submitted && !this.form?.get('name')?.errors">
+      <i class="icon-checkmark-circle"></i>
+    </div>
+    <div *ngIf="submitted && this.form?.get('name')?.errors">
+      <span class="form-text text-danger" *ngIf="submitted && this.form?.get('name')?.errors?.['required']"><i class="icon-cross2"></i>&nbsp; El nombre es requerido x</span>
+      <span class="form-text text-danger" *ngIf="submitted && this.form?.get('name')?.errors?.['minlength']"><i class="icon-cross2"></i>&nbsp; Debe tener al menos 10 caracteres</span>
+    </div>
+    <span class="form-text text-success" *ngIf="submitted && !this.form?.get('name')?.errors"><i class="icon-checkmark-circle2"></i>&nbsp; Se ve bien!</span>
+  </div>

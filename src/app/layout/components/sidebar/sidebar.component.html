@@ -1,0 +1,70 @@
+<div class="card card-sidebar-mobile">
+  <ul class="nav nav-sidebar" data-nav-type="accordion">
+
+    <!-- Main -->
+    <li class="nav-item-header">
+      <div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/home/index" class="nav-link" routerLinkActive="active">
+        <i class="icon-home4"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+    <li class="nav-item nav-item-submenu" routerLinkActive="nav-item-expanded nav-item-open" [ngClass]="{ 'nav-item-expanded nav-item-open': expanded}">
+      <a class="nav-link" (click)="expand()"><i class="icon-stack"></i> <span>Administración</span></a>
+      <ul class="nav nav-group-sub" data-submenu-title="Administración">
+        <li class="nav-item nav-item-submenu" routerLinkActive="nav-item-expanded nav-item-open">
+          <a class="nav-link">Modulos</a>
+          <ul class="nav nav-group-sub">
+            <li class="nav-item"><a routerLink="/users/index" routerLinkActive="active" class="nav-link">Usuarios</a></li>
+            <li class="nav-item"><a routerLink="/roles/index" class="nav-link" routerLinkActive="active">Roles</a></li>
+            <li class="nav-item"><a href="a" class="nav-link disabled">Terceros &nbsp;<i class="icon-blocked"></i></a></li>
+            <li class="nav-item"><a href="a" class="nav-link disabled">Empresas &nbsp;<i class="icon-blocked"></i></a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-item-submenu">
+          <a class="nav-link">Configuración</a>
+          <ul class="nav nav-group-sub">
+            <li class="nav-item"><a class="nav-link disabled">Municipios &nbsp;<i class="icon-blocked"></i></a></li>
+            <li class="nav-item"><a class="nav-link disabled">Paises &nbsp;<i class="icon-blocked"></i></a></li>
+            <li class="nav-item"><a class="nav-link disabled">Idiomas &nbsp;<i class="icon-blocked"></i></a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-item-submenu">
+          <a class="nav-link">Reportes</a>
+          <ul class="nav nav-group-sub">
+            <li class="nav-item"><a class="nav-link disabled">Usuarios &nbsp;<i class="icon-blocked"></i></a></li>
+            <li class="nav-item"><a class="nav-link disabled">Terceros &nbsp;<i class="icon-blocked"></i></a></li>
+            <li class="nav-item"><a class="nav-link disabled">Empresas &nbsp;<i class="icon-blocked"></i></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item nav-item-submenu">
+      <a href="a" class="nav-link"><i class="icon-tree5"></i> <span>Menu levels</span></a>
+      <ul class="nav nav-group-sub" data-submenu-title="Menu levels">
+        <li class="nav-item"><a href="#" class="nav-link"><i class="icon-IE"></i> Second level</a></li>
+        <li class="nav-item nav-item-submenu">
+          <a href="#" class="nav-link"><i class="icon-firefox"></i> Second level with child</a>
+          <ul class="nav nav-group-sub">
+            <li class="nav-item"><a href="#" class="nav-link"><i class="icon-android"></i> Third level</a></li>
+            <li class="nav-item nav-item-submenu">
+              <a href="#" class="nav-link"><i class="icon-apple2"></i> Third level with child</a>
+              <ul class="nav nav-group-sub">
+                <li class="nav-item"><a href="#" class="nav-link"><i class="icon-html5"></i> Fourth level</a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="icon-css3"></i> Fourth level</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="icon-windows"></i> Third level</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="icon-chrome"></i> Second level</a></li>
+      </ul>
+    </li>
+    <!-- /main -->
+
+  </ul>
+</div>
