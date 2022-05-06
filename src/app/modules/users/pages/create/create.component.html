@@ -47,13 +47,22 @@
 <!-- Content area -->
 <div class="content" style="min-height: 80vh;">
   <div class="card">
+    <div *ngIf="spinner" class="loading">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+            </div>
+        </div>
+    </div>
     <div class="card-header header-elements-inline">
       <h6 class="card-title">Crear usuario</h6>
     </div>
 
     <div class="card-body">
-      <div class="alert alert-success" *ngIf="stored">
-        Datos guardados correctamente
+      <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="stored">
+        <strong>Muy bien!</strong> Datos guardados correctamente.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
         <div class="row">
@@ -187,7 +196,9 @@
 
         <div class="d-flex justify-content-start align-items-center">
           <button type="reset" class="btn btn-light">Cancelar</button>
-          <button type="submit" class="btn bg-success ml-3">Enviar <i class="icon-paperplane ml-2"></i></button>
+          <button type="submit" class="btn bg-success ml-3">
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" *ngIf="spinner"></span>
+              Enviar <i class="icon-paperplane ml-2"></i></button>
         </div>
       </form>
     </div>
