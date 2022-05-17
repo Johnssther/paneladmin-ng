@@ -8,6 +8,8 @@ import { ShowComponent } from './pages/show/show.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputTextComponent } from './components/input-text/input-text.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { InputTextComponent } from './components/input-text/input-text.component
     UsersRoutingModule,
     RouterModule,
     ReactiveFormsModule,
+    SweetAlert2Module
   ]
 })
 export class UsersModule { }

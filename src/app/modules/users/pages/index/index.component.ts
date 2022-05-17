@@ -14,7 +14,7 @@ export class IndexComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this._userService.getUsers()
+    // this._userService.getUsers()
   }
   ngOnDestroy(): void {
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
+import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-create',
@@ -16,16 +18,17 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
   ) {
     this.formUser = this.formBuilder.group({
       id: [0, Validators.required],
-      name: ['John aLEJANDRO hERNANDE', [Validators.required, Validators.minLength(10)]],
-      surname: ['ERKGJRT', Validators.required],
-      email: ['j.ajr@gmail.com', [Validators.required, Validators.email]],
-      phone: ['dfer', [Validators.required, Validators.maxLength(15)]],
-      username: ['username12', Validators.required],
-      password: ['123qweasd', Validators.maxLength],
+      name: ['', [Validators.required, Validators.minLength(10)]],
+      surname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.maxLength(15)]],
+      username: ['', Validators.required],
+      password: ['', Validators.maxLength],
+      password_confirmation: ['', Validators.maxLength],
     })
   }
 
@@ -34,20 +37,32 @@ export class CreateComponent implements OnInit {
 
   onSubmit(): void {
     this.spinner = true;
-    console.log(this.formUser.controls);
     this.submitted = true;
 
     if (this.formUser.valid) {
-      this.userService.storeUser(this.formUser.value).subscribe(data => {
-          console.log(data);
+      this.userService.storeUser(this.formUser.value)
+        .subscribe(data => {
           this.stored = data.success;
           this.spinner = false;
-      })
-
-      console.log(this.formUser.value, 'se ve bien!')
+          Swal.fire({
+            // position: 'top-end',
+            icon: 'success',
+            title: 'Todo ha salido bien 😀',
+            showConfirmButton: false,
+            timer: 3500
+          })
+        }, error => {
+          this.spinner = false;
+        })
     } else {
-        console.log("FILL ALL FIELDS")
-        this.spinner = false;
+      Swal.fire({
+        // position: 'top-end',
+        icon: 'info',
+        title: 'Debes llenar todos los campos del formulario 🤔',
+        showConfirmButton: false,
+        timer: 3500
+      })
+      this.spinner = false;
     }
   }
 

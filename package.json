@@ -19,10 +19,12 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@sweetalert2/ngx-sweetalert2": "^11.0.0",
     "datatables.net": "^1.11.3",
     "datatables.net-bs4": "^1.11.3",
     "jquery": "^3.6.0",
     "rxjs": "~7.5.0",
+    "sweetalert2": "^11.4.14",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

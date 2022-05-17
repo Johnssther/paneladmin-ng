@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://dummy.restapiexample.com/api/v1/employees'
+  api: 'http://localhost/plantilla/public/api/v1'
 };
 
 /*
