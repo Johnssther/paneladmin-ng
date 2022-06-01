@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost/plantilla/public/api/v1'
+  api: 'http://129.146.185.172/safeapp-api/public/api/v1'
 };
 
 /*
